@@ -1,37 +1,119 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 30px;
+ body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 30px;
+      color: #8a8484;
+      background-color: rgb(23, 23, 23);
+      font-weight: bold;
+    }
+  h1 {
+    display: flex;     
+    text-align: center;      
+    justify-content: center;    
+    color:rgb(91, 245, 191);
+    padding-top: 300px;
+    font-size: 60px;
+}
+    h2 {
+      color: #ffffff;
+      font-size: 70px;
+      margin: 10px;
+      
+      
+    }
+    .navBar {
+      background-color: rgb(91, 245, 191);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    .buttonRow {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      
+    }
+    .buttonRow button {
+      padding: 8px 12px;
+      border: none;
+      background-color: rgba(100, 100, 100, 0.542);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      transition:  0.3s ease;
+      font-size: 20px;
+    }
+    .buttonRow button:hover {
+      background-color: rgb(51, 133, 105);
+    }
+    #balance {
+      margin-left: auto;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+    }
+   
+.historyLine {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+#transactionBars {
+    display: flex;
 }
 
-h2{
-    color: rgb(75, 75, 75);
+.logoutBtn{
+    color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition:  0.3s ease;
+    top: 95%;
+    position: absolute;
 }
-.navBar{
-    background-color: aliceblue;
+.logoutBtn button{
     padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+      border: none;
+      background-color: rgba(100, 100, 100, 0.542);
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: 0.3s ease;
+      font-size: 15px;
 }
-.buttonRow{
+.logoutBtn button:hover {
+      background-color: rgb(114, 255, 203);
+}
+.loginBtn{
+    
+    color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition:  0.3s ease;
     display: flex;
-    gap: 10px;
-    align-items: center;
+    justify-content: center;  
+    align-items: center; 
+    
 }
-.buttonRow button{
-    padding: 8px;
-    border: none;
-    background-color: rgb(90, 146, 194);
-    color: aliceblue;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+.loginBtn button{
+padding: 8px 12px;
+      border: none;
+      background-color: rgba(100, 100, 100, 0.542);
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: 0.3s ease;
+      font-size: 20px;
 }
-.buttonRow button:hover{
-    background-color: rgb(111, 162, 206);
+.loginBtn button:hover{
+    background-color: rgb(114, 255, 203);
 }
-#balance{
-    margin-left: auto;
-    font-weight: bold;
-    fon
+.historyLine{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    background-color: rgb(75, 75, 75);
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
 }
