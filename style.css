@@ -130,6 +130,54 @@ padding: 8px 12px;
 }
 
 
+
+
+.transactionBar {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.transactionBar td {
+  padding: 5px;
+}
+
+.transactionBar input[type="text"],
+.transactionBar input {
+  padding: 8px;
+  width: 120px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: #f0f0f0;
+  color: #000;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.transactionBar input:focus {
+  outline: none;
+  border-color: rgb(114, 255, 203);
+  background-color: #fff;
+}
+
+.add-btn {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  background-color: rgb(134, 134, 134);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: rgb(114, 255, 203);
+}
+
+
+
+
 /* Page transition styles */
 #app {
   opacity: 1;
@@ -146,4 +194,4 @@ padding: 8px 12px;
   opacity: 1;
   transform: scale(1);
 }
-g
+
