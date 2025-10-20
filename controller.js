@@ -1,7 +1,7 @@
-// Navigate to a page
+
 function goTo(pageName) {
-    model.app.currentPage = pageName; // update current page
-    updateView();                     // triggers the fade
+    model.app.currentPage = pageName; 
+    updateView();                     
 }
 
 function addTransaction() {
