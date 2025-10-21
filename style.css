@@ -132,17 +132,17 @@ padding: 8px 12px;
 
 
 
-.transactionBar {
+.inputBar {
   margin: 20px auto;
   border-collapse: collapse;
 }
 
-.transactionBar td {
+.inputBar td {
   padding: 5px;
 }
 
-.transactionBar input[type="text"],
-.transactionBar input {
+.inputBar input[type="text"],
+.inputBar input {
   padding: 8px;
   width: 120px;
   border: none;
@@ -154,7 +154,7 @@ padding: 8px 12px;
   transition: border-color 0.3s, background-color 0.3s;
 }
 
-.transactionBar input:focus {
+.inputBar input:focus {
   outline: none;
   border-color: rgb(114, 255, 203);
   background-color: #fff;

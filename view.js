@@ -231,7 +231,7 @@ function updateViewTransactions() {
     
     html += /*HTML*/`
     
-  <table class="transactionBar">
+  <table class="inputBar">
   <tr>
     <td><input value="${model.viewState.registration.year}" onchange="model.viewState.registration.year = this.value" /></td>
     <td><input value="${model.viewState.registration.month}" onchange="model.viewState.registration.month = this.value" /></td>
