@@ -41,7 +41,7 @@ function updateViewFront() {
 };
 
 function viewNavBar() {
-    return `
+    return /*HTML*/`
         <div class="navBar">
             <div class="buttonRow">
                 <button onclick="goTo('dashboard')">Dashboard</button>
@@ -77,7 +77,7 @@ function updateViewDashboard() {
         <div id="transactionOverview">
     `
     for (i = 0; i < 4; i++) {
-        html += `
+        html += /*HTML*/`
             <div class="historyLine">
                 <p class="historyItem">${model.filler.transactions[newTransactionId - i].month} / ${model.filler.transactions[newTransactionId - i].year}</p>
                 <p >${model.filler.transactions[newTransactionId - i].details.status}  ${model.filler.transactions[newTransactionId - i].details.amount},- </p>
@@ -88,7 +88,7 @@ function updateViewDashboard() {
     }
 
 
-    html += `
+    html += /*HTML*/`
         </div>
 
          <div class="logoutBtn">
@@ -107,21 +107,55 @@ function updateViewDashboard() {
 
 
 
+function updateFilters() {
+    if (model.viewState.filters.changingFilters < 0) {
+        model.filter.category = model.viewState.filters.category;
+        if (model.viewState.filters.month != 0) {
+            model.filter.month = model.viewState.filters.month;
+        }
+        if (model.viewState.filters.year != 0) {
+            model.filter.year = model.viewState.filters.year;
+        }
+
+    } 
+    model.viewState.filters.year = 2025;
+    model.viewState.filters.month = 10;
+    model.viewState.filters.category = "all";
+
+    model.viewState.filters.changingFilters *= -1;
+    updateView();
+}
 
 
 
 
 function showFilters() {
-    let html = '<button>filter</button>';
+    let html = '<button onclick="updateFilters()">filter</button>';
 
-    if (1 + 1 == 3) {
+    if (model.viewState.filters.changingFilters < 0) {
+        html += /*HTML*/`
+            <input value="${model.viewState.filters.year}" onchange="model.viewState.filters.year = this.value" type="number" />
+            <input value="${model.viewState.filters.month}" onchange="model.viewState.filters.month = this.value" type="number" min="0" max="12" />
+            <select onchange="model.viewState.filters.category = this.value">
+        `
+        for (categori in model.users[/*user id*/0].categories) {
+            html += `
+                <option value="${model.users[0].categories[categori][0]}" style="background-color: ${model.users[0].categories[categori][1]};">${model.users[0].categories[categori][0]}</option>
+            `
+        }
+        html += `
+            </select>
+        `
+
+
 
     } else {
-        if (model.viewState.filters.category != "all") html += `<button onclick="model.viewState.filters.category = 'all'; updateView()">category: ${model.viewState.filters.category}</button>`
 
-        if (model.viewState.filters.year != "all") html += `<button onclick="model.viewState.filters.year = 'all'; updateView()">year: ${model.viewState.filters.year}</button>`
+        if (model.filter.year != "all") html += `<button onclick="model.filter.year = 'all'; updateView()">year: ${model.filter.year}</button>`
 
-        if (model.viewState.filters.month != "all") html += `<button onclick="model.viewState.filters.month = 'all'; updateView()">month: ${model.viewState.filters.month}</button>`
+        if (model.filter.month != "all") html += `<button onclick="model.filter.month = 'all'; updateView()">month: ${model.filter.month}</button>`
+
+        if (model.filter.category != "all") html += `<button onclick="model.filter.category = 'all'; updateView()">category: ${model.filter.category}</button>`
     }
 
         
@@ -138,7 +172,7 @@ function updateViewHistory() {
         <br>
 
     
-    
+
         ${viewNavBar()}
 
         <div id="history" >
@@ -218,7 +252,7 @@ function updateViewTransactions() {
     html = '';
     const app = document.getElementById("app")
 
-    html += `
+    html += /*HTML*/`
         <h2 id="dashboardHeader">Transactions</h2>
         <br>
 
@@ -231,17 +265,30 @@ function updateViewTransactions() {
     
     html += /*HTML*/`
     
-  <table class="inputBar">
-  <tr>
-    <td><input value="${model.viewState.registration.year}" onchange="model.viewState.registration.year = this.value" /></td>
-    <td><input value="${model.viewState.registration.month}" onchange="model.viewState.registration.month = this.value" /></td>
-    <td><input value="${model.viewState.registration.category}" onchange="model.viewState.registration.category = this.value" /></td>
-    <td><input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
-    <td><input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value" /></td>
-    <td><input value="${model.viewState.registration.details.status}" onchange="model.viewState.registration.details.status = this.value" /></td>
-    <td><button onclick="addTransaction()" class="add-btn">+</button></td>
-  </tr>
-</table>
+    <table class="transactionBar">
+        <tr>
+            <td><input value="${model.viewState.registration.year}" onchange="model.viewState.registration.year = this.value" type="number" /></td>
+            <td><input value="${model.viewState.registration.month}" onchange="model.viewState.registration.month = this.value" type="number" /></td>
+            <td><select onchange="model.viewState.filters.category = this.value">
+        `
+    for (categori in model.users[/*user id*/0].categories) {
+        html += /*HTML*/`
+                <option value="${model.users[0].categories[categori][0]}" style="background-color: ${model.users[0].categories[categori][1]};">${model.users[0].categories[categori][0]}</option>
+        `
+    }
+    html += /*HTML*/`
+            </select></td>
+            <td><input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
+            <td><input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value" type="number" /></td>
+
+            <td><select onchange="model.viewState.registration.details.status = this.value">
+                <option value="gain">gain</option>
+                <option value="spend">spend</option>
+            </select></td>
+            
+            <td><button onclick="addTransaction()" class="add-btn">+</button></td>
+        </tr>
+    </table>
 
        
     `

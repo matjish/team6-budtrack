@@ -49,9 +49,9 @@ function getBalance() {
 
 
 function filtering(object) {
-    if (model.filler.transactions[transaction].category.toLowerCase() == model.viewState.filters.category.toLowerCase() || model.viewState.filters.category.toLowerCase() == "all") {
-        if (model.filler.transactions[transaction].month == model.viewState.filters.month || model.viewState.filters.month == "all") {
-            if (model.filler.transactions[transaction].year == model.viewState.filters.year || model.viewState.filters.year == "all") {
+    if (model.filler.transactions[transaction].category.toLowerCase() == model.filter.category.toLowerCase() || model.filter.category.toLowerCase() == "all") {
+        if (model.filler.transactions[transaction].month == model.filter.month || model.filter.month == "all") {
+            if (model.filler.transactions[transaction].year == model.filter.year || model.filter.year == "all") {
                 return true
             } else {
                 return false
