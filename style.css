@@ -156,7 +156,7 @@ padding: 8px 12px;
 
 .inputBar input:focus {
   outline: none;
-  border-color: rgb(114, 255, 203);
+  border-color: rgb(126, 126, 126);
   background-color: #fff;
 }
 
