@@ -1,0 +1,17 @@
+/* Page transition styles */
+#app {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#app.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+#app.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
