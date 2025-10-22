@@ -15,23 +15,21 @@ function updateViewHistory() {
     `
 
     for (i = model.users[model.app.userID].transactions.length - 1; i >= 0; i--) {
-        console.log(model.users[model.app.userID].transactions[i].details.name)
+        // console.log(model.users[model.app.userID].transactions[i].details.name)
         if (filtering(model.users[model.app.userID].transactions[i])) {
-            console.log("added")
+            // console.log("added")
             html += /*HTML*/`
                 <div class="historyLine">
                     <p class="historyItem">${model.users[model.app.userID].transactions[i].month} / ${model.users[model.app.userID].transactions[i].year}</p>
                     <p >${model.users[model.app.userID].transactions[i].details.status}  ${model.users[model.app.userID].transactions[i].details.amount},- </p>
                     <p >${model.users[model.app.userID].transactions[i].details.name}</p>
+                    <p >${model.users[model.app.userID].transactions[i].category}</p>
                     <p >${model.users[model.app.userID].transactions[i].dateAdded}</p>
                 </div>
             `
-        } else { console.log("not") }
-        console.log()
+        }
     }
-    for (i = 0; i >= 10; i++) {
-        console.log()
-    }
+
 
     html += /*HTML*/`
         </div>
@@ -78,4 +76,5 @@ function showFilters() {
 
         
     return html;
+
 }
