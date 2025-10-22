@@ -1,6 +1,7 @@
 const model = {
     app: {
-        currentPage: "front", // 'front', 'dashboard', 'transactions', 'history', 'filter?'
+        currentPage: "front", // 'front', 'dashboard', 'transactions', 'history', 'filter?',
+        userID: 0
     },
     
     
