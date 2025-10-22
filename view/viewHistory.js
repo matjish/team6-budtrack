@@ -13,20 +13,7 @@ function updateViewHistory() {
         <div id="history" >
         ${showFilters()}
     `
-    /*
-    for (transaction in model.filler.transactions) {
-        if (filtering(model.filler.transactions[transaction])) {
-            html += /*HTML*//*`
-                <div class="historyLine">
-                    <p class="historyItem">${model.filler.transactions[transaction].month} / ${model.filler.transactions[transaction].year}</p>
-                    <p >${model.filler.transactions[transaction].details.status}  ${model.filler.transactions[transaction].details.amount},- </p>
-                    <p >${model.filler.transactions[transaction].details.name}</p>
-                    <p >${model.filler.transactions[transaction].dateAdded}</p>
-                </div>
-            `
-        }
-    } 
-    */
+
     for (i = model.users[model.app.userID].transactions.length - 1; i >= 0; i--) {
         console.log(model.users[model.app.userID].transactions[i].details.name)
         if (filtering(model.users[model.app.userID].transactions[i])) {
@@ -67,6 +54,7 @@ function showFilters() {
             <input value="${model.viewState.filters.year}" onchange="model.viewState.filters.year = this.value" type="number" />
             <input value="${model.viewState.filters.month}" onchange="model.viewState.filters.month = this.value" type="number" min="0" max="12" />
             <select onchange="model.viewState.filters.category = this.value">
+                <option value="'all'" style="background-color: white;">all</option>
         `
         for (categori in model.users[/*user id*/0].categories) {
             html += `
