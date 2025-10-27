@@ -1,19 +1,30 @@
-    
-    
-.inputBar {
-  margin: 200px auto;
+
+/* TRANSACTION BAR INPUT */
+#transactionBars {
+    display: flex;
+
+   
+}
+
+.transactionBar {
+  margin: 0 auto;
   border-collapse: collapse;
-
+  align-items: center;
+  justify-content: center;  
+  
+  
 }
 
-.inputBar td {
-  padding: 50px;
+.transactionBar td {
+  padding: 6px 5px;
+ 
+  
 }
 
-.inputBar input[type="text"],
-.inputBar input {
+.transactionBar input,
+.transactionBar select {
   padding: 8px;
-  width: 120px;
+  width: 130px;
   border: none;
   border-bottom: 2px solid #ccc;
   background-color: #f0f0f0;
@@ -21,11 +32,13 @@
   font-size: 14px;
   border-radius: 4px;
   transition: border-color 0.3s, background-color 0.3s;
-}
+  
+} 
 
-.inputBar input:focus {
+.transactionBar input:focus,
+.transactionBar select:focus {
   outline: none;
-  border-color: rgb(126, 126, 126);
+  border-color: #888;
   background-color: #fff;
 }
 
@@ -43,3 +56,46 @@
 .add-btn:hover {
   background-color: rgb(114, 255, 203);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.transactionBar {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.transactionBar td {
+  padding: 5px;
+}
+
+.transactionBar input[type="text"],
+.transactionBar input {
+  padding: 8px;
+  width: 120px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: #f0f0f0;
+  color: #000;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.transactionBar input:focus {
+  outline: none;
+  border-color: rgb(126, 126, 126);
+  background-color: #fff;
+}
+

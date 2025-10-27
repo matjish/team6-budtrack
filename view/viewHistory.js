@@ -72,6 +72,11 @@ function showFilters() {
         if (model.filter.month != "all") html += `<button onclick="model.filter.month = 'all'; updateView()">month: ${model.filter.month}</button>`
 
         if (model.filter.category != "all") html += `<button onclick="model.filter.category = 'all'; updateView()">category: ${model.filter.category}</button>`
+
+        html += /*HTML*/`
+            <button onClick="goTo('addTransaction')" id="AddTransactionButton" >Add Transaction</button> 
+        `
+
     }
 
         

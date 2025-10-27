@@ -15,7 +15,7 @@ function addTransaction() {
     model.viewState.registration = {
         year: new Date().getFullYear(),
         month: new Date().getMonth() + 1,
-        category: "",
+        category: model.users[model.app.userID].categories[0][0],
         details: {
             name: "",
             amount: 0,

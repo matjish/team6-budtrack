@@ -33,7 +33,7 @@ function viewNavBar() {
                 <button onclick="goTo('transactions')">Transactions</button>
                 <button onclick="goTo('history')">History</button>
 
-                <p id="balance">Balance: ${model.filler.balance}</p>
+                <p id="balance">Balance: ${model.users[0].balance}</p>
             </div>
         </div>
 
