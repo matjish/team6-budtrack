@@ -1,8 +1,8 @@
 function itemInList(item, list) {
-    console.log(item)
-    console.log(list)
+    // console.log(item)
+    // console.log(list)
     for (i in list) {
-        console.log(i)
+        // console.log(i)
         if (list[i][0] == item) {
             return [true, i]
         }
