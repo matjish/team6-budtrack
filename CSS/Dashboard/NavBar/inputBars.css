@@ -1,18 +1,24 @@
     
     
-.inputBar {
-  margin: 200px auto;
+.transactionBar {
+  margin: 40px auto; 
   border-collapse: collapse;
-
+  display: table; 
+  width: -moz-fit-content;
+  width: fit-content;
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.inputBar td {
-  padding: 50px;
+.transactionBar td {
+  padding: 5px;
+  text-align: center; 
 }
 
-.inputBar input[type="text"],
-.inputBar input {
-  padding: 8px;
+.transactionBar input[type="text"],
+.transactionBar input {
+  padding: .5px;
   width: 120px;
   border: none;
   border-bottom: 2px solid #ccc;
@@ -21,6 +27,7 @@
   font-size: 14px;
   border-radius: 4px;
   transition: border-color 0.3s, background-color 0.3s;
+
 }
 
 .inputBar input:focus {
