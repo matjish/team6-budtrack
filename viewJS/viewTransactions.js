@@ -39,65 +39,15 @@ function updateViewTransactions() {
             <td><button onclick="addTransaction()" class="add-btn">+</button></td>
         </tr>
     </table>
-
-       
-    `
-    
-    /*
-    for (categorie in model.filler.categories) {
-        let barHeight = 0;
-        for (transaction in model.filler.transactions) {
-            // console.log(model.filler.transactions[transaction].category == model.filler.categories[categorie][0])
-            if (model.filler.transactions[transaction].category == model.filler.categories[categorie][0]) {
-
-                if (model.filler.transactions[transaction].details.status == "gain") {
-                    barHeight += model.filler.transactions[transaction].details.amount
-                    // console.log(model.filler.transactions[transaction].details.amount)
-                }
-
-            }
-
-        }
-        // console.log(barHeight, model.filler.categories[categorie])
-        html += `
-            <div style="height: ${barHeight/2}px; width: ${100/model.filler.categories.length}%;background-color: ${model.filler.categories[categorie][1]};" class="actionBar">
-            </div>
-        `
-    }
-    html += `
-        </div>
-        <div style="width: 100%; background-color: black; height: 5px;"></div>
-        <div id="transactionBars">
     `
 
-
-    for (categorie in model.filler.categories) {
-        let barHeight = 0;
-        for (transaction in model.filler.transactions) {
-            // console.log(model.filler.transactions[transaction].category == model.filler.categories[categorie][0])
-            if (model.filler.transactions[transaction].category == model.filler.categories[categorie][0]) {
-
-                if (model.filler.transactions[transaction].details.status != "gain") {
-                    barHeight += model.filler.transactions[transaction].details.amount
-                    // console.log(model.filler.transactions[transaction].details.amount)
-                }
-
-            }
-
-        }
-        // console.log(barHeight, model.filler.categories[categorie])
-        html += `
-            <div style="height: ${barHeight/2}px; width: ${100/model.filler.categories.length}%;background-color: ${model.filler.categories[categorie][1]};" class="actionBar">
-            </div>
-        `
-    }
-    */
     html += `
         </div>
     `
 
 
     app.innerHTML = html;
+   
     // updateView();
 }
 
