@@ -9,6 +9,7 @@ function addTransaction() {
             status: model.viewState.registration.details.status
         }, 
         dateAdded: new Date()
+        
     }
 
     model.viewState.registration = {

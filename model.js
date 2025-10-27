@@ -56,7 +56,7 @@ const model = {
             categories: [
                 ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"], ["Leisur", "cyan"],
             ],
-            balance: -5940,
+            balance: 100000,
         },
         {
             name: "not Kenneth",
