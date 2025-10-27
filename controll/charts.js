@@ -1,8 +1,12 @@
 function itemInList(item, list) {
-    console.log(item)
-    console.log(list)
+<<<<<<< Updated upstream
+    // console.log(item)
+    // console.log(list)
     for (i in list) {
-        console.log(i)
+        // console.log(i)
+=======
+    for (i in list) {
+>>>>>>> Stashed changes
         if (list[i][0] == item) {
             return [true, i]
         }
