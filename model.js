@@ -25,24 +25,6 @@ const model = {
     },
 
 
-
-
-    filler: {
-        transactions: [
-            // {year: null, month: null, category: null, details: {name: null, amount: null, status: "gain"/"spend"}, dateAdded: ""},
-            {year: 2025, month: 10, category: "Transport", details: {name: "bussTicket", amount: 40, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-            {year: 1999, month: 5, category: "Transport", details: {name: "flight 180 cancelled", amount: 400, status: "gain"}, dateAdded: new Date('May 7, 1999')},
-            {year: 2025, month: 10, category: "Food", details: {name: "halloween candy", amount: 1300, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-            {year: 2025, month: 10, category: "Leisure", details: {name: "meth", amount: 5000, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-            {year: 2025, month: 10, category: "Taxes", details: {name: "Tax", amount: 13000, status: "spend"}, dateAdded: new Date('October 15, 2025')},
-        ],
-        categories: [
-            ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"], ["Leisure", "cyan"],
-        ],
-        balance: "poor",
-    },
-
-
     users: [
         {
             name: "Kenneth",
@@ -59,13 +41,13 @@ const model = {
             ],
             balance: 0,
         },
+
         {
             name: "not Kenneth",
             transactions: [
                 // {year: null, month: null, category: null, details: {name: null, amount: null, status: "gain"/"spend"}, dateAdded: ""},
             ],
             categories: [
-                
             ],
             balance: 0,
         },
