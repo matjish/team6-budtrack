@@ -26,17 +26,28 @@ function updateView() {
 
 
 function viewNavBar() {
-    return /*HTML*/`
+    let html = /*HTML*/`
         <div class="navBar">
             <div class="buttonRow">
                 <button onclick="goTo('dashboard')">Dashboard</button>
                 <button onclick="goTo('transactions')">Transactions</button>
                 <button onclick="goTo('history')">History</button>
 
-                <p id="balance">Balance: ${model.users[0].balance}</p>
+                <p id="balance"
+                `
+                if (model.users[model.app.userID].balance <= 0) {
+                  html += /*HTML*/`
+                  style="color: red;"
+                  `
+                }
+
+                
+                html += /*HTML*/`
+                >Balance: ${model.users[model.app.userID].balance},-</p>
             </div>
         </div>
-
+      
 
     `
+    return html
 } 

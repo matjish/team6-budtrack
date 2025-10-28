@@ -5,7 +5,6 @@ const model = {
     },
     
     
-    
     viewState: {
         filters: {
             changingFilters: 1,
@@ -20,7 +19,7 @@ const model = {
             details: {
                 name: "",
                 amount: 0,
-                status: "gain/spend"
+                status: "gain"
             }, 
         }
     },
@@ -73,8 +72,8 @@ const model = {
 
     ],
     filter: {
-        year: 2025,
-        month: 10,
+        year: "all",
+        month: "all",
         category: "all",
     },
 

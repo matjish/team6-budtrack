@@ -49,7 +49,7 @@ function updateViewTransactions() {
 
         // Set Options
         const options = {
-            backgroundColor: '#171717',
+            backgroundColor: '#212121',
             colors: ['white'],
             'is3D' :true,
 
@@ -61,7 +61,7 @@ function updateViewTransactions() {
             
             
             hAxis: {
-                title: 'Cost',
+                title: 'Categories',
                 titleTextStyle: {
                     color: 'white'
                 },
@@ -73,7 +73,7 @@ function updateViewTransactions() {
 
 
             vAxis: {
-                title: 'Categories',
+                title: 'Cost',
                 titleTextStyle: {
                    color: 'white'
                 },
@@ -151,7 +151,7 @@ function updateViewAddTransaction() {
                 <option value="spend">Spend</option>
             </select></td>
             
-            <td><button onclick="addTransaction()" class="add-btn">+</button></td>
+            <td><button onclick="addTransaction()" class="add-btn">Add Expense</button></td>
         </tr>
     </table>
     `

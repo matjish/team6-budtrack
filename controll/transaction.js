@@ -19,7 +19,7 @@ function addTransaction() {
         details: {
             name: "",
             amount: 0,
-            status: "gain/spend"
+            status: "gain"
         }, 
     }
 
