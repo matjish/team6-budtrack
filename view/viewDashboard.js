@@ -57,9 +57,7 @@ function updateViewDashboard() {
         }
 
 
-        let weekTest = new Date().getFullYear()
-        // weekTest = weekTest.toFixed
-        console.log(weekTest)
+
 
         const data = google.visualization.arrayToDataTable(chartValues);
         // console.table(chartValues)
