@@ -15,6 +15,8 @@ function updateViewTransactions() {
         <div id="transactionBars" style="width:100%; height:630px;">
         </div>
     `
+
+
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -39,70 +41,73 @@ function updateViewTransactions() {
                     }
                 }
             }
+        }   
+        console.log(chartValues.length)
+
+        if (chartValues.length >= 2) {
+
+
+
+            // Set Data
+            const data = google.visualization.arrayToDataTable(chartValues);
+
+
+
+
+            // Set Options
+            const options = {
+                backgroundColor: '#212121',
+                colors: ['white'],
+                'is3D' :true,
+
+                legend: {
+                    textStyle: {
+                        color: 'white'
+                    }
+                },
+                
+                
+                hAxis: {
+                    title: 'Categories',
+                    titleTextStyle: {
+                        color: 'white'
+                    },
+
+                    textStyle: { // For axis labels
+                        color: 'white'
+                    }
+                },
+
+
+                vAxis: {
+                    title: 'Cost',
+                    titleTextStyle: {
+                    color: 'white'
+                    },
+
+                    textStyle: { // For axis labels
+                        color: 'white'
+                    }
+                }
+
+
+
+            };
+
+
+
+
+            // Draw
+            const chart = new google.visualization.ColumnChart(document.getElementById('transactionBars'));
+            chart.draw(data, options);
+        } else {        
+            document.getElementById('transactionBars').innerHTML = "<h2>no transaction found with current filter</h2>"
         }
-
-        // Set Data
-        const data = google.visualization.arrayToDataTable(chartValues);
-
-
-
-
-        // Set Options
-        const options = {
-            backgroundColor: '#212121',
-            colors: ['white'],
-            'is3D' :true,
-
-            legend: {
-                textStyle: {
-                    color: 'white'
-                }
-            },
-            
-            
-            hAxis: {
-                title: 'Categories',
-                titleTextStyle: {
-                    color: 'white'
-                },
-
-                textStyle: { // For axis labels
-                    color: 'white'
-                }
-            },
-
-
-            vAxis: {
-                title: 'Cost',
-                titleTextStyle: {
-                   color: 'white'
-                },
-
-                textStyle: { // For axis labels
-                    color: 'white'
-                }
-            }
-
-
-
-        };
-
-
-
-
-        // Draw
-        const chart = new google.visualization.ColumnChart(document.getElementById('transactionBars'));
-        chart.draw(data, options);
     }
 
 
 
-
-
-
-
-
-
+    
     app.innerHTML = html;
 }
 
