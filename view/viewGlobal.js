@@ -1,27 +1,34 @@
-function updateView() {
+function updateView(changePage = false) {
   const app = document.getElementById('app');
   const page = model.app.currentPage;
 
-  
-  app.classList.add('fade-out');
-  app.classList.remove('fade-in');
+  if (changePage == true) {
+    app.classList.add('fade-out');
+    app.classList.remove('fade-in');
 
   
-  setTimeout(() => {
-    getBalance();
+    setTimeout(() => {
+      getBalance();
 
-    if (page == 'front') updateViewFront();
-    else if (page == 'transactions') updateViewTransactions();
-    else if (page == 'dashboard') updateViewDashboard();
-    else if (page == 'history') updateViewHistory();
-    else if (page == 'addTransaction') updateViewAddTransaction();
-
-    
-    requestAnimationFrame(() => {
-      app.classList.remove('fade-out');
-      app.classList.add('fade-in');
-    });
-  }, 300); 
+      if (page == 'front') updateViewFront();
+      else if (page == 'transactions') updateViewTransactions();
+      else if (page == 'dashboard') updateViewDashboard();
+      else if (page == 'history') updateViewHistory();
+      else if (page == 'addTransaction') updateViewAddTransaction();
+      
+      
+      requestAnimationFrame(() => {
+        app.classList.remove('fade-out');
+        app.classList.add('fade-in');
+      });
+    }, 300); 
+  } else {
+      if (page == 'front') updateViewFront();
+      else if (page == 'transactions') updateViewTransactions();
+      else if (page == 'dashboard') updateViewDashboard();
+      else if (page == 'history') updateViewHistory();
+      else if (page == 'addTransaction') updateViewAddTransaction();
+  }
 }
 
 
@@ -50,4 +57,5 @@ function viewNavBar() {
 
     `
     return html
+
 } 
