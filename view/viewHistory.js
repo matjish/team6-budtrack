@@ -54,7 +54,7 @@ function showFilters() {
             <input value="${model.viewState.filters.year}" onchange="model.viewState.filters.year = this.value" type="number" />
             <input value="${model.viewState.filters.month}" onchange="model.viewState.filters.month = this.value" type="number" min="0" max="12" />
             <select onchange="model.viewState.filters.category = this.value">
-                <option value="all" style="background-color: white;">all</option>
+            <option value="all" style="background-color: white;">all</option>
         `;
 
         for (let categori in model.users[0].categories) {
