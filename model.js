@@ -13,8 +13,9 @@ const model = {
             category: "all",
         },
         registration: {
-            year: new Date().getFullYear(),
-            month: new Date().getMonth() + 1,
+            date: new Date(),
+            // year: new Date().getFullYear(),
+            // month: new Date().getMonth() + 1,
             category: "Transport",
             details: {
                 name: "",
@@ -28,13 +29,14 @@ const model = {
     users: [
         {
             name: "Kenneth",
+            password: "password",
             transactions: [
-                // {year: null, month: null, category: null, details: {name: null, amount: null, status: "gain"/"spend"}, dateAdded: ""},
-                {year: 2025, month: 10, category: "Transport", details: {name: "bussTicket", amount: 40, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-                {year: 1999, month: 5, category: "Transport", details: {name: "flight 180 cancelled", amount: 400, status: "gain"}, dateAdded: new Date('May 7, 1999')},
-                {year: 2025, month: 10, category: "Food", details: {name: "halloween candy", amount: 1300, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-                {year: 2025, month: 10, category: "Leisure", details: {name: "meth", amount: 5000, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-                {year: 2025, month: 10, category: "Taxes", details: {name: "Tax", amount: 13000, status: "spend"}, dateAdded: new Date('October 15, 2025')},
+                // {date: new Date(''), category: null, details: {name: null, amount: null, status: "gain"/"spend"}, dateAdded: ""},
+                {date: new Date('October 6, 2025'), category: "Transport", details: {name: "bussTicket", amount: 40, status: "spend"}, dateAdded: new Date('October 6, 2025')},
+                {date: new Date('May 7, 1999'), category: "Transport", details: {name: "flight 180 cancelled", amount: 400, status: "gain"}, dateAdded: new Date('May 7, 1999')},
+                {date: new Date('October 6, 2025'), category: "Food", details: {name: "halloween candy", amount: 1300, status: "spend"}, dateAdded: new Date('October 6, 2025')},
+                {date: new Date('October 6, 2025'), category: "Leisure", details: {name: "meth", amount: 5000, status: "spend"}, dateAdded: new Date('October 6, 2025')},
+                {date: new Date('October 6, 2025'), category: "Taxes", details: {name: "Tax", amount: 13000, status: "spend"}, dateAdded: new Date('October 15, 2025')},
             ],
             categories: [
                 ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"], ["Leisure", "orange"],
@@ -44,10 +46,12 @@ const model = {
 
         {
             name: "not Kenneth",
+            password: "notPassword",
             transactions: [
-                // {year: null, month: null, category: null, details: {name: null, amount: null, status: "gain"/"spend"}, dateAdded: ""},
+
             ],
             categories: [
+                
             ],
             balance: 0,
         },

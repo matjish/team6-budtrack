@@ -137,8 +137,7 @@ function updateViewAddTransaction() {
     
     <table class="transactionBar">
         <tr>
-            <td><input value="${model.viewState.registration.year}" onchange="model.viewState.registration.year = this.value - 0" type="number" /></td>
-            <td><input value="${model.viewState.registration.month}" onchange="model.viewState.registration.month = this.value - 0" type="number" max="12" min="0" /></td>
+            <td><input value="2025-10-6" onchange="model.viewState.registration.date = this.value" type="date" /></td>
             <td><select onchange="model.viewState.registration.category = this.value">
         `
     for (categori in model.users[/*user id*/0].categories) {
@@ -149,7 +148,7 @@ function updateViewAddTransaction() {
     html += /*HTML*/`
             </select></td>
             <td><input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
-            <td><input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" /></td>
+            <td><input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
 
             <td><select onchange="model.viewState.registration.details.status = this.value">
                 <option value="gain">Gain</option>

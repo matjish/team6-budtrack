@@ -1,7 +1,6 @@
 function addTransaction() {
     let newTransaction = {
-        year: model.viewState.registration.year,
-        month: model.viewState.registration.month,
+        date: new Date(model.viewState.registration.date),
         category: model.viewState.registration.category,
         details: {
             name: model.viewState.registration.details.name,
@@ -13,8 +12,7 @@ function addTransaction() {
     }
 
     model.viewState.registration = {
-        year: new Date().getFullYear(),
-        month: new Date().getMonth() + 1,
+        date: new Date(),
         category: model.users[model.app.userID].categories[0][0],
         details: {
             name: "",
