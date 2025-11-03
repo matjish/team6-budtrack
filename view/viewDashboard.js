@@ -25,14 +25,12 @@ function updateViewDashboard() {
             <button onclick="goTo('front')">Log out</button>
         </div>
 
-        <div
-            id="myChart" style="width:100%; height:630px;">
-        </div>
-
-        <div class="exchangeWrapper">
-          <p id="exchangeRateTitle">NOK Exchange Rates</p>
-        
-          <div id="output">Loading...</div>
+        <div id="chartAndRates">
+            <div id="myChart" style="width:100%; height:630px; border: 1rem, solid, #212121; border-radius: 15px;"></div>
+            <div class="exchangeWrapper">
+                <p id="exchangeRateTitle">NOK Exchange Rates</p>
+                <div id="output">Loading...</div>
+            </div>
         </div>
         
 
