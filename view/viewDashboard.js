@@ -28,6 +28,11 @@ function updateViewDashboard() {
         <div
             id="myChart" style="width:100%; height:630px;">
         </div>
+
+          <p id="exchangeRateTitle">NOK Exchange Rates</p>
+        
+          <div id="output">Loading...
+          </div>
         
 
     `
@@ -85,4 +90,31 @@ function updateViewDashboard() {
     
     app.innerHTML = html;
     // updateView();
+
+    getRates();
 };
+
+    async function getRates() {
+      const output = document.getElementById('output');
+      try {
+        const response = await fetch('https://api.frankfurter.app/latest?from=NOK&to=EUR,GBP,USD');
+        const data = await response.json();
+        const rates = data.rates;
+
+        let displayText = `1 NOK equals:<br><br>`;
+        for (const [currency, rate] of Object.entries(rates)) {
+          displayText += `${currency}: ${rate}<br>`;
+        }
+
+        output.innerHTML = displayText;
+        console.log(rates);
+      } catch (error) {
+        output.textContent = 'Error fetching data.';
+        console.error('Error:', error);
+      }
+    };
+
+    
+        
+    
+    

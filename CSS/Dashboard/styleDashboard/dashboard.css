@@ -1,0 +1,13 @@
+#output {
+    position: absolute;
+    left: 85%;
+    top: 35%;
+}
+
+#exchangeRateTitle {
+    font-size: large;
+    color: white;
+    position: absolute;
+    left: 85%;
+    top: 25%;
+}
