@@ -29,10 +29,11 @@ function updateViewDashboard() {
             id="myChart" style="width:100%; height:630px;">
         </div>
 
+        <div class="exchangeWrapper">
           <p id="exchangeRateTitle">NOK Exchange Rates</p>
         
-          <div id="output">Loading...
-          </div>
+          <div id="output">Loading...</div>
+        </div>
         
 
     `
@@ -101,9 +102,12 @@ function updateViewDashboard() {
         const data = await response.json();
         const rates = data.rates;
 
-        let displayText = `1 NOK equals:<br><br>`;
+        const balanceNOK = model.users[model.app.userID].balance;
+
+        let displayText = `NOK ${model.users[model.app.userID].balance} equals:<br><br>`;
         for (const [currency, rate] of Object.entries(rates)) {
-          displayText += `${currency}: ${rate}<br>`;
+            const converted = (balanceNOK * rate).toFixed(2);
+            displayText += `${currency}: ${converted}<br>`;
         }
 
         output.innerHTML = displayText;
