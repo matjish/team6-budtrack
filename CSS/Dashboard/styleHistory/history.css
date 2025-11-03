@@ -1,6 +1,6 @@
 .historyLine{
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(4, 25%);
     background-color: rgb(75, 75, 75);
     color: white;
     border-radius: 10px;
