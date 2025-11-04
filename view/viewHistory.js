@@ -58,7 +58,7 @@ function numberToMonth(num) {
 
 function showFilters() {
     let html = '<div id="filter">';
-    html += '<button onclick="updateFilters()" class="add-btn">filter</button>';
+    html += '<button onclick="updateFilters()" class="add-btn">Filter ☰</button>';
 
     if (model.viewState.filters.changingFilters < 0) {
         html += `

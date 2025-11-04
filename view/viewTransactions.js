@@ -147,7 +147,7 @@ function updateViewAddTransaction() {
     html += /*HTML*/`
         </select></td>
         <p>Details: <input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
-        <p>Spendings: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
+        <p>Amount: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
 
         <p>Status: <select onchange="model.viewState.registration.details.status = this.value">
             <option value="gain">Gain</option>
