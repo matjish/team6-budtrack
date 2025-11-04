@@ -69,8 +69,8 @@ function showFilters() {
             <option value="all" style="background-color: white;">all</option>
         `;
 
-        for (let categori in model.users[0].categories) {
-            const cat = model.users[0].categories[categori];
+        for (let categori in model.users[model.app.userID].categories) {
+            const cat = model.users[model.app.userID].categories[categori];
             html += `<option value="${cat[0]}" style="background-color: ${cat[1]};">${cat[0]}</option>`;
         }
 
