@@ -1,6 +1,5 @@
 function updateViewFront() {
-    document.getElementById('app').innerHTML = /*HTML*/`
-    
+    let html = /*HTML*/`
     <h1 class="budtrackHeader" id="budtrackHeader">BudTrack</h1>
 
 
@@ -9,28 +8,44 @@ function updateViewFront() {
         <p>
             username: <input value="${model.viewState.logIn.username}" onchange="model.viewState.logIn.username = this.value" type="text" />
         </p>
+    `
+    if (model.viewState.logIn.hidden == true) {
+        html += /*HTML*/`
+            <p>
+                password: <input value="${model.viewState.logIn.password}" onchange="model.viewState.logIn.password = this.value" type="password" /><button onclick="model.viewState.logIn.hidden = false; updateView()">-_-</button>
+            </p>
+        `
+    } else {
+        html += /*HTML*/`
+            <p>
+                password: <input value="${model.viewState.logIn.password}" onchange="model.viewState.logIn.password = this.value" type="text" /><button onclick="model.viewState.logIn.hidden = true; updateView()">O_O</button>
+            </p>
+        `
+    }
 
-        <p>
-            password: <input value="${model.viewState.logIn.password}" onchange="model.viewState.logIn.password = this.value" type="text" />
-        </p>
+
+
+
+    html += /*HTML*/`
     </div>
 
     <div class="loginBtn">
         <button onclick="logIn()">Login</button>
     </div>
     `
+    document.getElementById('app').innerHTML = html
 };
 
 
 
 function logIn() {
     let login = model.viewState.logIn
-    console.log(login.username)
-    console.log(login.password)
+    // console.log(login.username)
+    // console.log(login.password)
 
     for (user in model.users) {
-        console.log(model.users[user].name)
-        console.log(model.users[user].password)
+        // console.log(model.users[user].name)
+        // console.log(model.users[user].password)
 
         if (login.username == model.users[user].name) {
             if (login.password == model.users[user].password) {

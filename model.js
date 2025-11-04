@@ -8,7 +8,8 @@ const model = {
     viewState: {
         logIn: {
             username: "",
-            password: ""
+            password: "",
+            hidden: true,
         },
         filters: {
             changingFilters: 1,
@@ -49,7 +50,7 @@ const model = {
         },
 
         {
-            name: "benjamin",
+            name: "notKenneth",
             password: "notPassword",
             transactions: [
                 {date: new Date('Febuary 8, 2025'), category: "Festive", details: {name: "birthday cake", amount: 300, status: "spend"}, dateAdded: new Date('November 4, 2025')},
