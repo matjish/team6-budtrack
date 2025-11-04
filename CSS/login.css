@@ -59,3 +59,14 @@ padding: 8px 12px;
 .logoutBtn button:hover{
     background-color: rgb(114, 255, 203);
 }
+
+
+
+
+
+
+/* login input fields */
+.logInField{
+    margin: auto;
+    width: fit-content;
+}

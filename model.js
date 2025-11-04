@@ -6,6 +6,10 @@ const model = {
     
     
     viewState: {
+        logIn: {
+            username: "",
+            password: ""
+        },
         filters: {
             changingFilters: 1,
             year: 2025,
@@ -31,7 +35,7 @@ const model = {
             name: "Kenneth",
             password: "password",
             transactions: [
-                // {date: new Date(''), category: null, details: {name: null, amount: null, status: "gain"/"spend"}, dateAdded: ""},
+                // {date: new Date(''), category: "", details: {name: "", amount: 0, status: ""}, dateAdded: new Date('')},
                 {date: new Date('October 6, 2025'), category: "Transport", details: {name: "bussTicket", amount: 40, status: "spend"}, dateAdded: new Date('October 6, 2025')},
                 {date: new Date('May 7, 1999'), category: "Transport", details: {name: "flight 180 cancelled", amount: 400, status: "gain"}, dateAdded: new Date('May 7, 1999')},
                 {date: new Date('October 6, 2025'), category: "Food", details: {name: "halloween candy", amount: 1300, status: "spend"}, dateAdded: new Date('October 6, 2025')},
@@ -45,13 +49,14 @@ const model = {
         },
 
         {
-            name: "not Kenneth",
+            name: "benjamin",
             password: "notPassword",
             transactions: [
-
+                {date: new Date('Febuary 8, 2025'), category: "Festive", details: {name: "birthday cake", amount: 300, status: "spend"}, dateAdded: new Date('November 4, 2025')},
+                {date: new Date('December 26, 2019'), category: "Fun", details: {name: "Ark: Survival Evolved", amount: 105, status: "spend"}, dateAdded: new Date('November 4, 2025')},
             ],
             categories: [
-                
+                ["Festive", "pink"], ["Fun", "cyan"]
             ],
             balance: 0,
         },
