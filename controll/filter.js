@@ -1,7 +1,7 @@
 function filtering(object) {
     if (object.category.toLowerCase() == model.filter.category.toLowerCase() || model.filter.category.toLowerCase() == "all") {
-        if (object.month == model.filter.month || model.filter.month == "all") {
-            if (object.year == model.filter.year || model.filter.year == "all") {
+        if (object.date.getMonth() + 1 == model.filter.month || model.filter.month == "all") {
+            if (object.date.getFullYear() == model.filter.year || model.filter.year == "all") {
                 return true
             } else {
                 return false

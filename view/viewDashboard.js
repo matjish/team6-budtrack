@@ -25,8 +25,12 @@ function updateViewDashboard() {
             <button onclick="goTo('front')">Log out</button>
         </div>
 
-        <div
-            id="myChart" style="width:100%; height:630px;">
+        <div id="chartAndRates">
+            <div id="myChart" style="width:100%; height:630px; border: 1rem, solid, #212121; border-radius: 15px;"></div>
+            <div class="exchangeWrapper">
+                <p id="exchangeRateTitle">NOK Exchange Rates</p>
+                <div id="output">Loading...</div>
+            </div>
         </div>
         
 
@@ -85,4 +89,34 @@ function updateViewDashboard() {
     
     app.innerHTML = html;
     // updateView();
+
+    getRates();
 };
+
+    async function getRates() {
+      const output = document.getElementById('output');
+      try {
+        const response = await fetch('https://api.frankfurter.app/latest?from=NOK&to=EUR,GBP,USD');
+        const data = await response.json();
+        const rates = data.rates;
+
+        const balanceNOK = model.users[model.app.userID].balance;
+
+        let displayText = `NOK ${model.users[model.app.userID].balance} equals:<br><br>`;
+        for (const [currency, rate] of Object.entries(rates)) {
+            const converted = (balanceNOK * rate).toFixed(2);
+            displayText += `${currency}: ${converted}<br>`;
+        }
+
+        output.innerHTML = displayText;
+        console.log(rates);
+      } catch (error) {
+        output.textContent = 'Error fetching data.';
+        console.error('Error:', error);
+      }
+    };
+
+    
+        
+    
+    

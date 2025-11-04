@@ -133,33 +133,33 @@ function updateViewAddTransaction() {
         <div class="transactionBars" id="transactionBars">
     `
     
+
     html += /*HTML*/`
-    
-    <table class="transactionBar">
-        <tr>
-            <td><input value="${model.viewState.registration.year}" onchange="model.viewState.registration.year = this.value - 0" type="number" /></td>
-            <td><input value="${model.viewState.registration.month}" onchange="model.viewState.registration.month = this.value - 0" type="number" max="12" min="0" /></td>
-            <td><select onchange="model.viewState.registration.category = this.value">
-        `
+    <div class="transactionBar">
+        <p>dato: <input value="2025-10-06" onchange="model.viewState.registration.date = this.value" type="date" /></td>
+        <p>categori: <select onchange="model.viewState.registration.category = this.value">
+    `
     for (categori in model.users[/*user id*/0].categories) {
         html += /*HTML*/`
-                <option value="${model.users[0].categories[categori][0]}" style="background-color: ${model.users[0].categories[categori][1]};">${model.users[0].categories[categori][0]}</option>
+            <option value="${model.users[0].categories[categori][0]}" style="background-color: ${model.users[0].categories[categori][1]};">${model.users[0].categories[categori][0]}</option>
         `
     }
     html += /*HTML*/`
-            </select></td>
-            <td><input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
-            <td><input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" /></td>
+        </select></td>
+        <p>detalier: <input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
+        <p>spendings: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
 
-            <td><select onchange="model.viewState.registration.details.status = this.value">
-                <option value="gain">Gain</option>
-                <option value="spend">Spend</option>
-            </select></td>
-            
-            <td><button onclick="addTransaction()" class="add-btn">Add Expense</button></td>
-        </tr>
-    </table>
+        <p>status: <select onchange="model.viewState.registration.details.status = this.value">
+            <option value="gain">Gain</option>
+            <option value="spend">Spend</option>
+        </select></td>
+        
+        <p><button onclick="addTransaction()" class="add-btn">Add Expense</button></td>
+    </div>
     `
+
+
+
 
     html += `
         </div>
