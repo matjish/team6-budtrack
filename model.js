@@ -45,7 +45,7 @@ const model = {
                 {date: new Date('October 15, 2025'), category: "Income", details: {name: "Lønn", amount: 45000, status: "gain"}, dateAdded: new Date('October 15, 2025')},
             ],
             categories: [
-                ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"], ["Leisure", "orange"],
+                ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"], ["Leisure", "orange"], ["Income", "lime"],
             ],
             balance: 0,
         },

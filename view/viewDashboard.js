@@ -2,7 +2,7 @@ function updateViewDashboard() {
     html = '';
     const app = document.getElementById("app")
 
-    let newTransactionId = model.users[0].transactions.length - 1;
+    let newTransactionId = model.users[model.app.userID].transactions.length - 1;
     html += /*HTML*/`
         <h2 id="dashboardHeader">Dashboard</h2>
         <br>
@@ -42,19 +42,19 @@ function updateViewDashboard() {
         let chartValues = [['categorie', 'cost']]
         let chartColors = []
         for (categories in model.users[model.app.userID].categories) {
-            // console.log(model.users[0].categories[categories])
+            // console.log(model.users[model.app.userID].categories[categories])
             
-            for (transactions in model.users[0].transactions) {
+            for (transactions in model.users[model.app.userID].transactions) {
                 tempData = itemInList(model.users[model.app.userID].categories[categories][0], chartValues)
-                // console.log(model.users[0].transactions[transactions])
+                // console.log(model.users[model.app.userID].transactions[transactions])
 
-                if (model.users[0].transactions[transactions].category == model.users[model.app.userID].categories[categories][0]) {
+                if (model.users[model.app.userID].transactions[transactions].category == model.users[model.app.userID].categories[categories][0]) {
 
                     if (tempData[0] == false) {
-                        chartValues.push([model.users[model.app.userID].categories[categories][0], model.users[0].transactions[transactions].details.amount])
+                        chartValues.push([model.users[model.app.userID].categories[categories][0], model.users[model.app.userID].transactions[transactions].details.amount])
                         chartColors.push(model.users[model.app.userID].categories[categories][1])
                     } else {
-                        chartValues[tempData[1]][1] += model.users[0].transactions[transactions].details.amount
+                        chartValues[tempData[1]][1] += model.users[model.app.userID].transactions[transactions].details.amount
                     }
                 }
             }

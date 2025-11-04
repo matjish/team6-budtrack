@@ -24,19 +24,19 @@ function updateViewTransactions() {
         let chartValues = [['categorie', 'kr,-', { role: "style" } ]]
 
         for (categories in model.users[model.app.userID].categories) {
-            // console.log(model.users[0].categories[categories])
+            // console.log(model.users[model.app.userID].categories[categories])
             
-            for (transactions in model.users[0].transactions) {
+            for (transactions in model.users[model.app.userID].transactions) {
                 tempData = itemInList(model.users[model.app.userID].categories[categories][0], chartValues)
-                // console.log(model.users[0].transactions[transactions])
+                // console.log(model.users[model.app.userID].transactions[transactions])
 
-                if (model.users[0].transactions[transactions].category == model.users[model.app.userID].categories[categories][0]) {
+                if (model.users[model.app.userID].transactions[transactions].category == model.users[model.app.userID].categories[categories][0]) {
                     if (filtering(model.users[model.app.userID].transactions[transactions])) {
                         if (tempData[0] == false) {
-                            chartValues.push([model.users[model.app.userID].categories[categories][0], model.users[0].transactions[transactions].details.amount, model.users[model.app.userID].categories[categories][1]])
+                            chartValues.push([model.users[model.app.userID].categories[categories][0], model.users[model.app.userID].transactions[transactions].details.amount, model.users[model.app.userID].categories[categories][1]])
 
                         } else {
-                            chartValues[tempData[1]][1] += model.users[0].transactions[transactions].details.amount
+                            chartValues[tempData[1]][1] += model.users[model.app.userID].transactions[transactions].details.amount
                         }
                     }
                 }
@@ -139,9 +139,9 @@ function updateViewAddTransaction() {
         <p>Date: <input value="2025-10-06" onchange="model.viewState.registration.date = this.value" type="date" /></td>
         <p>Category: <select onchange="model.viewState.registration.category = this.value">
     `
-    for (categori in model.users[/*user id*/0].categories) {
+    for (categori in model.users[model.app.userID].categories) {
         html += /*HTML*/`
-            <option value="${model.users[0].categories[categori][0]}" style="background-color: ${model.users[0].categories[categori][1]};">${model.users[0].categories[categori][0]}</option>
+            <option value="${model.users[model.app.userID].categories[categori][0]}" style="background-color: ${model.users[model.app.userID].categories[categori][1]};">${model.users[model.app.userID].categories[categori][0]}</option>
         `
     }
     html += /*HTML*/`

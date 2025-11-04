@@ -21,7 +21,7 @@ function addTransaction() {
         }, 
     }
 
-    model.users[0].transactions.push(newTransaction)
+    model.users[model.app.userID].transactions.push(newTransaction)
     goTo('history')
 }
 
@@ -29,12 +29,12 @@ function addTransaction() {
 
 function getBalance() {
     let balance = 0;
-    for (transaction in model.users[0].transactions) {
-        if (model.users[0].transactions[transaction].details.status == "gain") {
-            balance -= (model.users[0].transactions[transaction].details.amount * -1)
+    for (transaction in model.users[model.app.userID].transactions) {
+        if (model.users[model.app.userID].transactions[transaction].details.status == "gain") {
+            balance -= (model.users[model.app.userID].transactions[transaction].details.amount * -1)
         } else {
-            balance -= model.users[0].transactions[transaction].details.amount
+            balance -= model.users[model.app.userID].transactions[transaction].details.amount
         }
     }
-    model.users[0].balance = balance
+    model.users[model.app.userID].balance = balance
 }
