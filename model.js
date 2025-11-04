@@ -37,11 +37,12 @@ const model = {
             password: "password",
             transactions: [
                 // {date: new Date(''), category: "", details: {name: "", amount: 0, status: ""}, dateAdded: new Date('')},
-                {date: new Date('October 6, 2025'), category: "Transport", details: {name: "bussTicket", amount: 40, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-                {date: new Date('May 7, 1999'), category: "Transport", details: {name: "flight 180 cancelled", amount: 400, status: "gain"}, dateAdded: new Date('May 7, 1999')},
-                {date: new Date('October 6, 2025'), category: "Food", details: {name: "halloween candy", amount: 1300, status: "spend"}, dateAdded: new Date('October 6, 2025')},
-                {date: new Date('October 6, 2025'), category: "Leisure", details: {name: "meth", amount: 5000, status: "spend"}, dateAdded: new Date('October 6, 2025')},
+                {date: new Date('October 6, 2025'), category: "Transport", details: {name: "Bus Ticket", amount: 40, status: "spend"}, dateAdded: new Date('October 6, 2025')},
+                {date: new Date('May 7, 1999'), category: "Transport", details: {name: "Flight 180 cancelled", amount: 400, status: "gain"}, dateAdded: new Date('May 7, 1999')},
+                {date: new Date('October 6, 2025'), category: "Food", details: {name: "Halloween candy", amount: 1300, status: "spend"}, dateAdded: new Date('October 6, 2025')},
+                {date: new Date('October 6, 2025'), category: "Leisure", details: {name: "Meth", amount: 5000, status: "spend"}, dateAdded: new Date('October 6, 2025')},
                 {date: new Date('October 6, 2025'), category: "Taxes", details: {name: "Tax", amount: 13000, status: "spend"}, dateAdded: new Date('October 15, 2025')},
+                {date: new Date('October 15, 2025'), category: "Income", details: {name: "Lønn", amount: 45000, status: "gain"}, dateAdded: new Date('October 15, 2025')},
             ],
             categories: [
                 ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"], ["Leisure", "orange"],

@@ -26,7 +26,7 @@ function updateViewDashboard() {
         </div>
 
         <div id="chartAndRates">
-            <div id="myChart" style="width:100%; height:630px; border: 1rem, solid, #212121; border-radius: 15px;"></div>
+            <div id="myChart"></div>
             <div class="exchangeWrapper">
                 <p id="exchangeRateTitle">NOK Exchange Rates</p>
                 <div id="output">Loading...</div>
@@ -69,7 +69,7 @@ function updateViewDashboard() {
 
 
         const options = {
-            backgroundColor: '#212121',
+            backgroundColor: { fill: 'transparent'},
             colors: chartColors,
             'is3D' :true,
 

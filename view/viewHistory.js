@@ -13,10 +13,10 @@ function updateViewHistory() {
         <div id="history" >
         ${showFilters()}
             <div class="historyLine">
-                <p class="historyItem">date / month / year</p>
-                <p >spendings</p>
-                <p >details</p>
-                <p >categorie</p>
+                <p class="historyItem">Date / Month / Year</p>
+                <p >Spendings</p>
+                <p >Details</p>
+                <p >Category</p>
             </div>
     `
 

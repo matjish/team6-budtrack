@@ -136,8 +136,8 @@ function updateViewAddTransaction() {
 
     html += /*HTML*/`
     <div class="transactionBar">
-        <p>dato: <input value="2025-10-06" onchange="model.viewState.registration.date = this.value" type="date" /></td>
-        <p>categori: <select onchange="model.viewState.registration.category = this.value">
+        <p>Date: <input value="2025-10-06" onchange="model.viewState.registration.date = this.value" type="date" /></td>
+        <p>Category: <select onchange="model.viewState.registration.category = this.value">
     `
     for (categori in model.users[/*user id*/0].categories) {
         html += /*HTML*/`
@@ -146,10 +146,10 @@ function updateViewAddTransaction() {
     }
     html += /*HTML*/`
         </select></td>
-        <p>detalier: <input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
-        <p>spendings: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
+        <p>Details: <input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
+        <p>Spendings: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
 
-        <p>status: <select onchange="model.viewState.registration.details.status = this.value">
+        <p>Status: <select onchange="model.viewState.registration.details.status = this.value">
             <option value="gain">Gain</option>
             <option value="spend">Spend</option>
         </select></td>
