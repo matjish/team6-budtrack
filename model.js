@@ -4,30 +4,43 @@ const model = {
         userID: 0
     },
     
-    
+
     viewState: {
-        logIn: {
+        logIn: { // updateViewFront();
             username: "",
             password: "",
             hidden: true,
         },
-        filters: {
+
+        signUp: { // updateViewSignUp();
+            username: "",
+            password: "",
+            passwordConfirmation: "",
+            hidden: true,
+            problemText: "",
+        },
+
+        filters: { // showFilters()
             changingFilters: 1,
             year: 2025,
             month: 10,
             category: "all",
         },
-        registration: {
+
+        registration: { // updateViewAddTransaction();
             date: new Date(),
-            // year: new Date().getFullYear(),
-            // month: new Date().getMonth() + 1,
             category: "Transport",
             details: {
                 name: "",
                 amount: 0,
                 status: "gain"
             }, 
-        }
+        },
+
+        categorie: { // updateViewCategorie();
+            name: "",
+            color: "#ffffff",
+        },
     },
 
 

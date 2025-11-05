@@ -145,9 +145,9 @@ function updateViewAddTransaction() {
         `
     }
     html += /*HTML*/`
-        </select></td>
+        </select> <button onclick="goTo('addCategorie')">+</button></td>
         <p>Details: <input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
-        <p>Amount: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
+        <p>Spendings: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
 
         <p>Status: <select onchange="model.viewState.registration.details.status = this.value">
             <option value="gain">Gain</option>
@@ -161,10 +161,65 @@ function updateViewAddTransaction() {
 
 
 
-    html += `
+    html += /*HTML*/`
         </div>
     `
 
 
     app.innerHTML = html;
+}
+
+
+function updateViewCategoire() {
+    html = '';
+    const app = document.getElementById("app")
+
+    html += /*HTML*/`
+        <h2 id="dashboardHeader">Add Categorie</h2>
+        <br>
+
+    
+    
+        ${viewNavBar()}
+        <p></p>
+        <div class="transactionBars" id="transactionBars">
+    `
+    
+
+    html += /*HTML*/`
+    <div class="transactionBar">
+        <p>name: <input value="${model.viewState.categorie.name}" onchange="model.viewState.categorie.name = this.value" type="text" /></td>
+        <p>color: <input value="${model.viewState.categorie.color}" onchange="model.viewState.categorie.color = this.value" type="color" /></td>
+
+
+        <p><button onclick="addCategorie()" class="add-btn">Add categorie</button></td>
+    </div>
+    `
+
+
+
+
+    html += /*HTML*/`
+        </div>
+    `
+
+
+    app.innerHTML = html;
+}
+
+
+
+
+
+function addCategorie() {
+
+    let newCategorie = [
+        model.viewState.categorie.name,
+        model.viewState.categorie.color
+    ]
+    model.viewState.categorie.name = ""
+    model.viewState.categorie.color = "#ffffff"
+
+    model.users[model.app.userID].categories.push(newCategorie)
+    goTo('addTransaction')
 }

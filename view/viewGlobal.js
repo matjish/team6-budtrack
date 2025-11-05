@@ -15,6 +15,8 @@ function updateView(changePage = false) {
       else if (page == 'dashboard') updateViewDashboard();
       else if (page == 'history') updateViewHistory();
       else if (page == 'addTransaction') updateViewAddTransaction();
+      else if (page == 'signUp') updateViewSignUp();
+      else if (page == 'addCategorie') updateViewCategoire();
       
       
       requestAnimationFrame(() => {
@@ -28,8 +30,14 @@ function updateView(changePage = false) {
       else if (page == 'dashboard') updateViewDashboard();
       else if (page == 'history') updateViewHistory();
       else if (page == 'addTransaction') updateViewAddTransaction();
+      else if (page == 'signUp') updateViewSignUp();
+      else if (page == 'addCategorie') updateViewCategoire();
   }
 }
+
+
+
+
 
 
 function viewNavBar() {
