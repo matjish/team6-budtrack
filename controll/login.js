@@ -55,7 +55,7 @@ function registerAcount() {
 
         if (signIn.password.length < 8 || signIn.password.length > 28) {
             problems += 1;
-            signIn.problemText = "password must be bettwen 8 and 28 letters"
+            signIn.problemText = "password must be between 8 and 28 letters"
         }
 
         if (signIn.password != signIn.passwordConfirmation) {
