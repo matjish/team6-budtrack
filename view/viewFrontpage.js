@@ -6,19 +6,19 @@ function updateViewFront() {
     <div class="logInField">
 
         <p>
-            username: <input value="${model.viewState.logIn.username}" onchange="model.viewState.logIn.username = this.value" type="text" />
+            Username: <input value="${model.viewState.logIn.username}" onchange="model.viewState.logIn.username = this.value" type="text" />
         </p>
     `
     if (model.viewState.logIn.hidden == true) {
         html += /*HTML*/`
             <p>
-                password: <input value="${model.viewState.logIn.password}" onchange="model.viewState.logIn.password = this.value" type="password" /><button onclick="model.viewState.logIn.hidden = false; updateView()">-_-</button>
+                Password: <input value="${model.viewState.logIn.password}" onchange="model.viewState.logIn.password = this.value" type="password"/> <button onclick="model.viewState.logIn.hidden = false; updateView()">⦸</button>
             </p>
         `
     } else {
         html += /*HTML*/`
             <p>
-                password: <input value="${model.viewState.logIn.password}" onchange="model.viewState.logIn.password = this.value" type="text" /><button onclick="model.viewState.logIn.hidden = true; updateView()">O_O</button>
+                Password: <input value="${model.viewState.logIn.password}" onchange="model.viewState.logIn.password = this.value" type="text"/>    <button onclick="model.viewState.logIn.hidden = true; updateView()">👁</button>
             </p>
         `
     }
@@ -46,32 +46,32 @@ function updateViewSignUp() {
     <div class="logInField">
 
         <p>
-            username: <input value="${model.viewState.signUp.username}" onchange="model.viewState.signUp.username = this.value" type="text" />
+            Username: <input value="${model.viewState.signUp.username}" onchange="model.viewState.signUp.username = this.value" type="text" />
         </p>
     `
     if (model.viewState.signUp.hidden == true) {
         html += /*HTML*/`
             <p>
-                password: <input value="${model.viewState.signUp.password}" onchange="model.viewState.signUp.password = this.value" type="password" /><button onclick="model.viewState.signUp.hidden = false; updateView()">-_-</button>
+                Password: <input value="${model.viewState.signUp.password}" onchange="model.viewState.signUp.password = this.value" type="password" />
             </p>
         `
     } else {
         html += /*HTML*/`
             <p>
-                password: <input value="${model.viewState.signUp.password}" onchange="model.viewState.signUp.password = this.value" type="text" /><button onclick="model.viewState.signUp.hidden = true; updateView()">O_O</button>
+                Password: <input value="${model.viewState.signUp.password}" onchange="model.viewState.signUp.password = this.value" type="text" />
             </p>
         `
     }
     if (model.viewState.signUp.hidden == true) {
         html += /*HTML*/`
             <p>
-                password: <input value="${model.viewState.signUp.passwordConfirmation}" onchange="model.viewState.signUp.passwordConfirmation = this.value" type="password" /><button onclick="model.viewState.signUp.hidden = false; updateView()">-_-</button>
+                Password: <input value="${model.viewState.signUp.passwordConfirmation}" onchange="model.viewState.signUp.passwordConfirmation = this.value" type="password" /><button onclick="model.viewState.signUp.hidden = false; updateView()">⦸</button>
             </p>
         `
     } else {
         html += /*HTML*/`
             <p>
-                password: <input value="${model.viewState.signUp.passwordConfirmation}" onchange="model.viewState.signUp.passwordConfirmation = this.value" type="text" /><button onclick="model.viewState.signUp.hidden = true; updateView()">O_O</button>
+                Password: <input value="${model.viewState.signUp.passwordConfirmation}" onchange="model.viewState.signUp.passwordConfirmation = this.value" type="text" /><button onclick="model.viewState.signUp.hidden = true; updateView()">👁</button>
             </p>
         `
     }
