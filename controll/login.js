@@ -32,8 +32,10 @@ function userIdLogIn() {
 
 
 function registerAcount() {
+    const signIn = model.viewState.signUp;
+    const legalText = "abcdefghijklmnopqrstuvwxyzæøå "
     let problems = 0;
-    let signIn = model.viewState.signUp;
+
     let newAcount = {
         name: signIn.username,
         password: signIn.password,
@@ -42,35 +44,55 @@ function registerAcount() {
         ],
 
         categories: [
+            ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"],
         ],
 
         balance: 0,
     }
+        
+    // requirements start
+        for (letter in signIn.username) {
+            let legalLetter = false
+            for (symbol in legalText) {
+                if (signIn.username[letter].toLowerCase() == legalText[symbol]) {
+                    legalLetter = true
+                    console.log(`${legalText[symbol]} == ${signIn.username[letter].toLowerCase()}`)
+                }
+            }
+            if (legalLetter == false) {
+                console.log(`${signIn.username[letter]} is not allowed`)
+                problems +=1;
+                signIn.problemText = "username may only contain letters and spaces"
+            }
+        }
 
-    // requirements
-        // if (signIn.username.length < 2) {
-        //     problems += 1;
-        //     signIn.problemText = "username must be at least 2 letters"
-        // }
 
+        if (signIn.username.length < 2) {
+            problems += 1;
+            signIn.problemText = "Username must be at least 2 letters"
+        }
+
+        
         if (signIn.password.length < 8 || signIn.password.length > 28) {
             problems += 1;
-            signIn.problemText = "password must be between 8 and 28 letters"
+            signIn.problemText = "Password must be between 8 and 28 letters"
         }
+
 
         if (signIn.password != signIn.passwordConfirmation) {
             problems += 1;
             signIn.problemText = "Passwords do not match"
         }
 
+
         for (user in model.users) {
-            console.log(`${model.users[user].name} != ${signIn.username}`)
+            // console.log(`${model.users[user].name} != ${signIn.username}`)
             if (signIn.username == model.users[user].name) {
                 problems += 1;
                 signIn.problemText = "Username already exists"
             }
         }
-
+    // requirements end
 
 
     if (problems <= 0) {
@@ -85,3 +107,4 @@ function registerAcount() {
         updateView()
     }
 }
+
