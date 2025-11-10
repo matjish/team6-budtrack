@@ -71,7 +71,7 @@ const model = {
                 {date: new Date('December 26, 2019'), category: "Fun", details: {name: "Ark: Survival Evolved", amount: 105, status: "spend"}, dateAdded: new Date('November 4, 2025')},
             ],
             categories: [
-                ["Festive", "pink"], ["Fun", "cyan"]
+                ["Transport", "blue"], ["Food", "green"], ["Taxes", "red"], ["Festive", "pink"], ["Fun", "cyan"]
             ],
             balance: 0,
         },
