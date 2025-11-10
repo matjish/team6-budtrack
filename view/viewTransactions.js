@@ -145,7 +145,7 @@ function updateViewAddTransaction() {
         `
     }
     html += /*HTML*/`
-        </select> <button onclick="goTo('addCategorie')">+</button></td>
+        </select> <button id="addCategory" onclick="goTo('addCategorie')">+</button></td>
         <p>Details: <input value="${model.viewState.registration.details.name}" onchange="model.viewState.registration.details.name = this.value" /></td>
         <p>Spendings: <input value="${model.viewState.registration.details.amount}" onchange="model.viewState.registration.details.amount = this.value - 0" type="number" min="0" /></td>
 
