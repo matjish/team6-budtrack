@@ -67,3 +67,7 @@ function viewNavBar() {
     return html
 
 } 
+
+
+
+

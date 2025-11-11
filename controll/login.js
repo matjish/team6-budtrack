@@ -60,7 +60,7 @@ function registerAcount() {
                 }
             }
             if (legalLetter == false) {
-                console.log(`${signIn.username[letter]} is not allowed`)
+                // console.log(`${signIn.username[letter]} is not allowed`)
                 problems +=1;
                 signIn.problemText = "username may only contain letters and spaces"
             }
